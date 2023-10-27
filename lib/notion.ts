@@ -25,11 +25,10 @@ const getNavigationLinkPages = pMemoize(
             chunkLimit: 1,
             fetchMissingBlocks: false,
             fetchCollections: false,
-            signFileUrls: false,
-            concurrency: 4
+            signFileUrls: false
           }),
         {
-          concurrency: 4
+          concurrency: 5
         }
       )
     }
