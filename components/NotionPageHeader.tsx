@@ -31,6 +31,7 @@ const ToggleThemeButton = () => {
       onClick={onToggleTheme}
     >
       {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+      <h5>Toggle Theme</h5>
     </div>
   )
 }

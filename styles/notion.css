@@ -50,7 +50,7 @@
 }
 
 .notion-nav-header-rhs {
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .notion-gallery-grid {
@@ -60,7 +60,7 @@
 }
 
 .notion-gallery-grid .notion-page-icon-inline {
-  display: none;
+  display: inline-flex;
 }
 
 .notion-gallery-grid .notion-page-title-text {

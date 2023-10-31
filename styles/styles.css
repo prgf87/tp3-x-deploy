@@ -158,6 +158,7 @@
   align-items: center;
   gap: 15px;
   cursor: pointer;
+  color: white;
 }
 
 @media (min-width: 1300px) and (min-height: 300px) {
@@ -540,8 +541,8 @@
 }
 
 .notion-page-no-cover {
-  margin-top: 48px !important;
-  padding-top: 96px;
+  /* margin-top: 48px !important; */
+  padding-top: 48px;
 }
 
 .notion-page-no-cover.notion-page-no-icon {
@@ -568,7 +569,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
 }
@@ -2278,7 +2279,7 @@ svg.notion-page-icon {
   height: var(--notion-header-height);
   min-height: var(--notion-header-height);
 
-  background: var(--bg-color);
+  background: rgb(255, 68, 215);
 }
 
 .notion-header .notion-nav-header {
@@ -2325,6 +2326,8 @@ svg.notion-page-icon {
   user-select: none;
   background: transparent;
   cursor: pointer;
+
+  gap: 0.2em;
 }
 
 .notion-header .breadcrumb .notion-page-icon-inline {
