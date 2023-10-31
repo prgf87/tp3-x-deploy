@@ -147,6 +147,19 @@
   flex-direction: column;
 }
 
+.logo {
+  height: 50px;
+  max-width: 50px;
+}
+
+.header-title {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
 @media (min-width: 1300px) and (min-height: 300px) {
   .notion-page-content-has-aside {
     display: flex;

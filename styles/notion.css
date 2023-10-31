@@ -9,7 +9,7 @@
 
 .notion {
   --notion-max-width: 720px;
-  --notion-header-height: 54px;
+  --notion-header-height: 80px;
   background-color: transparent;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .index-page {
-  --notion-max-width: 900px;
+  --notion-max-width: 1440px;
 }
 
 .notion-text {
