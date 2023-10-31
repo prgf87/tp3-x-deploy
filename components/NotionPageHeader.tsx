@@ -31,7 +31,7 @@ const ToggleThemeButton = () => {
       onClick={onToggleTheme}
     >
       {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
-      <h5>Toggle Theme</h5>
+      <p>Toggle Theme</p>
     </div>
   )
 }
@@ -66,7 +66,7 @@ export const NotionPageHeader: React.FC<{
         <div className='notion-nav-header-rhs breadcrumbs'>
           <ToggleThemeButton />
 
-          {isSearchEnabled && <Search block={block} title={null} />}
+          {isSearchEnabled && <Search block={block} title={'Search'} />}
         </div>
       </div>
     </header>

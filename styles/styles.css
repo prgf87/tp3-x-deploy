@@ -2280,6 +2280,7 @@ svg.notion-page-icon {
   min-height: var(--notion-header-height);
 
   background: rgb(255, 68, 215);
+  opacity: 85%;
 }
 
 .notion-header .notion-nav-header {
@@ -2317,7 +2318,7 @@ svg.notion-page-icon {
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  color: var(--fg-color);
+  color: white;
   text-decoration: none;
   margin: 1px 0px;
   padding: 4px 6px;
@@ -2327,11 +2328,11 @@ svg.notion-page-icon {
   background: transparent;
   cursor: pointer;
 
-  gap: 0.2em;
+  gap: 0.5em;
 }
 
 .notion-header .breadcrumb .notion-page-icon-inline {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.1;
   margin: 0 6px 0 0;
 }
@@ -2345,7 +2346,7 @@ svg.notion-page-icon {
   width: 14px;
   height: 14px;
   color: var(--fg-color);
-  fill: var(--fg-color);
+  fill: white;
 }
 
 .notion-search-button {
