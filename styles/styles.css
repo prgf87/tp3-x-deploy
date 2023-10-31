@@ -1365,8 +1365,8 @@ svg.notion-page-icon {
 .notion-property-multi_select-item {
   display: flex;
   align-items: center;
-  padding: 0 6px;
-  border-radius: 3px;
+  padding: 2px 6px;
+  border-radius: 4px;
   height: 18px;
   white-space: nowrap;
   overflow: hidden;
