@@ -94,17 +94,6 @@ export const NotionPageHeader: React.FC<{
               you to build healthier and happier relationships.
             </p>
           </div>
-          {/* <div>
-            <h1>Categories</h1>
-            <ul className='flex justify-evenly items-center'>
-              <li>How to..</li>
-              <li>Apologies</li>
-              <li>How to..</li>
-              <li>Apologies</li>
-              <li>How to..</li>
-              <li>Apologies</li>
-            </ul>
-          </div> */}
         </section>
       )}
     </>
