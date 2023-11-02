@@ -78,25 +78,33 @@ export const NotionPageHeader: React.FC<{
           <h1 className='text-6xl text-pink-700 pb-4 font-bold'>
             Talking Points for Life
           </h1>
-          <div className='text-xl max-w-5xl mx-auto text-black'>
-            <p>
+          <div className='text-xl max-w-5xl mx-auto'>
+            <p className='index-page-p'>
               How to answer life&apos;s toughest questions, draw boundaries, ask
               for what you want, and more.
             </p>
-            <p>
+            <p className='index-page-p'>
               Too many people are left with little choice but to scroll through
               Reddit threads and Quora posts when looking for advice on what to
               say. Communication is tricky. We all bring our own biases,
               emotions and histories to the table.
             </p>
-            <p>
+            <p className='index-page-p'>
               This site will help you navigate those tricky subjects, allowing
               you to build healthier and happier relationships.
             </p>
           </div>
-          <div>
-            <ul></ul>
-          </div>
+          {/* <div>
+            <h1>Categories</h1>
+            <ul className='flex justify-evenly items-center'>
+              <li>How to..</li>
+              <li>Apologies</li>
+              <li>How to..</li>
+              <li>Apologies</li>
+              <li>How to..</li>
+              <li>Apologies</li>
+            </ul>
+          </div> */}
         </section>
       )}
     </>
