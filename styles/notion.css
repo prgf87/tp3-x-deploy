@@ -9,7 +9,7 @@
 
 .notion {
   --notion-max-width: 720px;
-  --notion-header-height: 54px;
+  --notion-header-height: 80px;
   background-color: transparent;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .index-page {
-  --notion-max-width: 900px;
+  --notion-max-width: 1440px;
 }
 
 .notion-text {
@@ -50,7 +50,7 @@
 }
 
 .notion-nav-header-rhs {
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .notion-gallery-grid {
@@ -60,11 +60,11 @@
 }
 
 .notion-gallery-grid .notion-page-icon-inline {
-  display: none;
+  display: inline-flex;
 }
 
 .notion-gallery-grid .notion-page-title-text {
-  font-size: 2em;
+  font-size: 16px;
   white-space: unset;
 }
 

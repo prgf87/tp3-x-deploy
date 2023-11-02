@@ -1,12 +1,14 @@
 import * as React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import * as types from 'notion-types'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
 import cs from 'classnames'
-import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
+import { Search } from 'react-notion-x'
 
-import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
+import { isSearchEnabled } from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
@@ -29,6 +31,7 @@ const ToggleThemeButton = () => {
       onClick={onToggleTheme}
     >
       {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+      <p>Toggle Theme</p>
     </div>
   )
 }
@@ -36,53 +39,74 @@ const ToggleThemeButton = () => {
 export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
 }> = ({ block }) => {
-  const { components, mapPageUrl } = useNotionContext()
+  // const { components, mapPageUrl } = useNotionContext()
 
-  if (navigationStyle === 'default') {
-    return <Header block={block} />
-  }
+  // if (navigationStyle === 'default') {
+  //   return <Header block={block} />
+  // }
+
+  const pageId = block.id.replaceAll('-', '')
 
   return (
-    <header className='notion-header'>
-      <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
+    <>
+      <header className='notion-header'>
+        <div className='notion-nav-header'>
+          {/* <Breadcrumbs block={block} rootOnly={true} /> */}
 
-        <div className='notion-nav-header-rhs breadcrumbs'>
-          {navigationLinks
-            ?.map((link, index) => {
-              if (!link.pageId && !link.url) {
-                return null
-              }
+          <Link href={'/'}>
+            <div className='header-title'>
+              <Image
+                src={'/logo.png'}
+                alt='Site Logo'
+                className='logo'
+                width={50}
+                height={50}
+              />
+              <h2>Talking Points for Life</h2>
+            </div>
+          </Link>
 
-              if (link.pageId) {
-                return (
-                  <components.PageLink
-                    href={mapPageUrl(link.pageId)}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.PageLink>
-                )
-              } else {
-                return (
-                  <components.Link
-                    href={link.url}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.Link>
-                )
-              }
-            })
-            .filter(Boolean)}
+          <div className='notion-nav-header-rhs breadcrumbs'>
+            <ToggleThemeButton />
 
-          <ToggleThemeButton />
-
-          {isSearchEnabled && <Search block={block} title={null} />}
+            {isSearchEnabled && <Search block={block} title={'Search'} />}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {pageId === 'e600a555239945e3b856b3c27bc29d16' && (
+        <section className='pt-10 max-w-3xl lg:max-w-7xl mx-auto px-4 z-50 text-center text-white'>
+          <h1 className='text-6xl text-pink-700 pb-4 font-bold'>
+            Talking Points for Life
+          </h1>
+          <div className='text-xl max-w-5xl mx-auto'>
+            <p className='index-page-p'>
+              How to answer life&apos;s toughest questions, draw boundaries, ask
+              for what you want, and more.
+            </p>
+            <p className='index-page-p'>
+              Too many people are left with little choice but to scroll through
+              Reddit threads and Quora posts when looking for advice on what to
+              say. Communication is tricky. We all bring our own biases,
+              emotions and histories to the table.
+            </p>
+            <p className='index-page-p'>
+              This site will help you navigate those tricky subjects, allowing
+              you to build healthier and happier relationships.
+            </p>
+          </div>
+          {/* <div>
+            <h1>Categories</h1>
+            <ul className='flex justify-evenly items-center'>
+              <li>How to..</li>
+              <li>Apologies</li>
+              <li>How to..</li>
+              <li>Apologies</li>
+              <li>How to..</li>
+              <li>Apologies</li>
+            </ul>
+          </div> */}
+        </section>
+      )}
+    </>
   )
 }
