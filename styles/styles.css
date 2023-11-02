@@ -628,7 +628,7 @@
 }
 
 .notion-search .notion-page-icon {
-  fill: var(--fg-color-6);
+  fill: black;
   color: var(--fg-color);
 }
 
@@ -2054,6 +2054,7 @@ svg.notion-page-icon {
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
+  color: #000;
 }
 
 /* removes double underline with links */
@@ -2392,7 +2393,7 @@ svg.notion-page-icon {
   box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,
     rgba(15, 15, 15, 0.1) 0px 5px 10px, rgba(15, 15, 15, 0.2) 0px 15px 40px;
   border-radius: 3px;
-  background: var(--bg-color);
+  background: white;
 
   position: relative;
   top: 90px;
@@ -2405,13 +2406,13 @@ svg.notion-page-icon {
 
   font-size: 16px;
   line-height: 1.5;
-  color: rgb(55, 53, 47);
+  color: rgb(155, 153, 147);
   caret-color: rgb(55, 53, 47);
   font-family: var(--notion-font);
 }
 
 .notion-search input {
-  background-color: var(--bg-color);
+  background-color: var(white);
 }
 
 .notion-search .quickFindMenu {
@@ -2444,11 +2445,13 @@ svg.notion-page-icon {
 
   line-height: inherit;
   font-size: inherit;
+
+  color: #000;
 }
 
 .notion-search .inlineIcon {
   margin-right: 10px;
-  fill: var(--fg-color-2);
+  fill: black;
 }
 
 .notion-search .clearButton {
@@ -2561,6 +2564,7 @@ svg.notion-page-icon {
 .notion-search .resultsPane .result .notion-search-result-highlight {
   font-size: 90%;
   margin: 4px 0 0 30px;
+  color: #000;
 }
 
 .notion-sync-block {
