@@ -2054,7 +2054,7 @@ svg.notion-page-icon {
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
-  color: #000;
+  color: var(--fg-color);
 }
 
 /* removes double underline with links */
@@ -2393,7 +2393,7 @@ svg.notion-page-icon {
   box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,
     rgba(15, 15, 15, 0.1) 0px 5px 10px, rgba(15, 15, 15, 0.2) 0px 15px 40px;
   border-radius: 3px;
-  background: white;
+  background: var(--bg-color-2);
 
   position: relative;
   top: 90px;
@@ -2412,7 +2412,7 @@ svg.notion-page-icon {
 }
 
 .notion-search input {
-  background-color: var(white);
+  background-color: var(--fg-color);
 }
 
 .notion-search .quickFindMenu {
@@ -2446,12 +2446,17 @@ svg.notion-page-icon {
   line-height: inherit;
   font-size: inherit;
 
-  color: #000;
+  color: var(--fg-color);
+  background-color: var(--bg-color-1);
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .notion-search .inlineIcon {
   margin-right: 10px;
-  fill: black;
+  fill: var(--fg-color);
 }
 
 .notion-search .clearButton {
@@ -2564,7 +2569,7 @@ svg.notion-page-icon {
 .notion-search .resultsPane .result .notion-search-result-highlight {
   font-size: 90%;
   margin: 4px 0 0 30px;
-  color: #000;
+  color: var(--fg-color);
 }
 
 .notion-sync-block {

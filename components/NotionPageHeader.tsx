@@ -45,6 +45,8 @@ export const NotionPageHeader: React.FC<{
   //   return <Header block={block} />
   // }
 
+  const pageId = block.id.replaceAll('-', '')
+
   return (
     <>
       <header className='notion-header'>
@@ -71,27 +73,32 @@ export const NotionPageHeader: React.FC<{
           </div>
         </div>
       </header>
-      <section className='pt-10 max-w-3xl lg:max-w-7xl mx-auto px-4 z-50 text-center text-white'>
-        <h1 className='text-6xl text-pink-900 pb-4 font-bold'>
-          Talking Points for Life
-        </h1>
-        <div className='text-xl max-w-5xl mx-auto text-black'>
-          <p>
-            How to answer life&apos;s toughest questions, draw boundaries, ask
-            for what you want, and more.
-          </p>
-          <p>
-            Too many people are left with little choice but to scroll through
-            Reddit threads and Quora posts when looking for advice on what to
-            say. Communication is tricky. We all bring our own biases, emotions
-            and histories to the table.
-          </p>
-          <p>
-            This site will help you navigate those tricky subjects, allowing you
-            to build healthier and happier relationships.
-          </p>
-        </div>
-      </section>
+      {pageId === 'e600a555239945e3b856b3c27bc29d16' && (
+        <section className='pt-10 max-w-3xl lg:max-w-7xl mx-auto px-4 z-50 text-center text-white'>
+          <h1 className='text-6xl text-pink-700 pb-4 font-bold'>
+            Talking Points for Life
+          </h1>
+          <div className='text-xl max-w-5xl mx-auto text-black'>
+            <p>
+              How to answer life&apos;s toughest questions, draw boundaries, ask
+              for what you want, and more.
+            </p>
+            <p>
+              Too many people are left with little choice but to scroll through
+              Reddit threads and Quora posts when looking for advice on what to
+              say. Communication is tricky. We all bring our own biases,
+              emotions and histories to the table.
+            </p>
+            <p>
+              This site will help you navigate those tricky subjects, allowing
+              you to build healthier and happier relationships.
+            </p>
+          </div>
+          <div>
+            <ul></ul>
+          </div>
+        </section>
+      )}
     </>
   )
 }
