@@ -5,7 +5,7 @@ import { isRedisEnabled, redisNamespace, redisUrl } from './config'
 
 let db: Keyv
 if (isRedisEnabled) {
-  const keyvRedis = new KeyvRedis(redisUrl, { maxRetriesPerRequest: 50 })
+  const keyvRedis = new KeyvRedis(redisUrl, { maxRetriesPerRequest: 100 })
   db = new Keyv({
     store: keyvRedis,
     namespace: redisNamespace || undefined
