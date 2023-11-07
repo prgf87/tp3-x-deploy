@@ -28,7 +28,7 @@ const getNavigationLinkPages = pMemoize(
             signFileUrls: false
           }),
         {
-          concurrency: 5
+          concurrency: 20
         }
       )
     }
