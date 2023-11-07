@@ -3,6 +3,8 @@ import { getPageTitle, parsePageId } from 'notion-utils'
 import * as config from './config'
 import { getPage } from './notion'
 
+let maxSiteMapPages = 16
+
 export const oembed = async ({
   url,
   maxWidth,
@@ -21,6 +23,12 @@ export const oembed = async ({
   let authorName = config.author
 
   // TODO: handle errors gracefully
+
+  if (maxSiteMapPages === 0) {
+    return
+  } else {
+    maxSiteMapPages--
+  }
 
   const page = await getPage(pageId)
   const pageTitle = getPageTitle(page)
