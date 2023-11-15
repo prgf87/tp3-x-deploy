@@ -37,6 +37,8 @@ export async function getStaticPaths() {
 
   // console.log(siteMap, 'siteMAP#############')
 
+  // console.log('ObjectKeys: ', Object.keys(siteMap.canonicalPageMap))
+
   const staticPaths = {
     // paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({
     //   params: {

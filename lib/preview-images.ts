@@ -5,6 +5,7 @@ import { getPageImageUrls, normalizeUrl } from 'notion-utils'
 import pMap from 'p-map'
 import pMemoize from 'p-memoize'
 
+// import { uploadImage } from 'pages/api/cloudinary'
 import { defaultPageCover, defaultPageIcon } from './config'
 import { db } from './db'
 import { mapImageUrl } from './map-image-url'
@@ -17,6 +18,8 @@ export async function getPreviewImageMap(
   })
     .concat([defaultPageIcon, defaultPageCover])
     .filter(Boolean)
+
+  // console.log(urls)
 
   const previewImagesMap = Object.fromEntries(
     await pMap(
@@ -38,6 +41,11 @@ async function createPreviewImage(
   url: string,
   { cacheKey }: { cacheKey: string }
 ): Promise<PreviewImage | null> {
+  console.log(url, cacheKey)
+
+  // const res = await uploadImage(url, cacheKey)
+
+  // console.log(res, 'res#####')
   try {
     try {
       const cachedPreviewImage = await db.get(cacheKey)
@@ -45,13 +53,12 @@ async function createPreviewImage(
         return cachedPreviewImage
       }
     } catch (err) {
-      // ignore redis errors
       console.warn(`redis error get "${cacheKey}"`, err.message)
     }
 
     const { body } = await got(url, { responseType: 'buffer' })
     const result = await lqip(body)
-    console.log('lqip', { ...result.metadata, url, cacheKey })
+    console.log('lqip URI#####: ', result.metadata.dataURIBase64)
 
     const previewImage = {
       originalWidth: result.metadata.originalWidth,
@@ -62,7 +69,6 @@ async function createPreviewImage(
     try {
       await db.set(cacheKey, previewImage)
     } catch (err) {
-      // ignore redis errors
       console.warn(`redis error set "${cacheKey}"`, err.message)
     }
 
