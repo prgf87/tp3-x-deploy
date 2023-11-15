@@ -35,7 +35,6 @@ async function getAllPagesImpl(
 ): Promise<Partial<types.SiteMap>> {
   const getPage = async (pageId: string, ...args) => {
     console.log('\nnotion getPage', uuidToId(pageId))
-    console.log('am i running?')
 
     return notion.getPage(pageId, ...args)
   }
